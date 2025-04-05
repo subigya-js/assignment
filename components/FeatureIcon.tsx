@@ -13,14 +13,14 @@ export default function FeatureIcon({
     feature: { title: string; points: string[] };
     className: string;
     id: string;
-    onClick: () => void;
+    onClick?: () => void;
 }) {
     return (
         <div
-            className={`${className} cursor-pointer group`}
+            className={`${className} ${onClick ? 'cursor-pointer' : ''} group`}
             onClick={onClick}
         >
-            <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-2">
+            <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-2 bg-opacity-80">
                 <Image src={iconSrc} alt={id} width={40} height={40} />
                 <p className="text-sm w-[160px] text-center">{feature.title}</p>
             </div>
