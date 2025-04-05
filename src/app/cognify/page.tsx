@@ -14,7 +14,7 @@ export default async function CognifyPage() {
 
   return (
     <div className="flex flex-col items-center justify-center p-10 bg-white h-screen">
-      <h2 className="text-3xl font-medium mb-10 text-center text-gray-700">
+      <h2 className="text-3xl font-medium mb-10 text-center text-gray-700 w-[25%] leading-10">
         CognifyNow doesn’t just teach, it thinks with you
       </h2>
 

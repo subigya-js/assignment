@@ -19,10 +19,10 @@ export default function FeatureIcon({
             className={`${className} cursor-pointer group`}
             onClick={() => setClicked(!clicked)}
         >
-        <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-2">
-            <Image src={iconSrc} alt={feature.title} width={40} height={40} />
-            <p className='text-sm w-[160px] text-center'>{feature.title}</p>
-        </div>
+            <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-2">
+                <Image src={iconSrc} alt={feature.title} width={40} height={40} />
+                <p className='text-sm w-[160px] text-center'>{feature.title}</p>
+            </div>
 
             {clicked && (
                 <div className="absolute p-4 bg-white rounded-xl shadow-xl mt-2 w-64 z-10">
