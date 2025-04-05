@@ -1,39 +1,29 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 
 export default function FeatureIcon({
     iconSrc,
     feature,
     className,
+    id,
+    onClick,
 }: {
     iconSrc: string;
     feature: { title: string; points: string[] };
     className: string;
+    id: string;
+    onClick: () => void;
 }) {
-    const [clicked, setClicked] = useState(false);
-
     return (
         <div
             className={`${className} cursor-pointer group`}
-            onClick={() => setClicked(!clicked)}
+            onClick={onClick}
         >
             <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center gap-2">
-                <Image src={iconSrc} alt={feature.title} width={40} height={40} />
-                <p className='text-sm w-[160px] text-center'>{feature.title}</p>
+                <Image src={iconSrc} alt={id} width={40} height={40} />
+                <p className="text-sm w-[160px] text-center">{feature.title}</p>
             </div>
-
-            {clicked && (
-                <div className="absolute p-4 bg-white rounded-xl shadow-xl mt-2 w-64 z-10">
-                    <h3 className="font-bold text-sm mb-2">{feature.title}</h3>
-                    <ul className="text-xs space-y-1">
-                        {feature.points.map((pt, idx) => (
-                            <li key={idx}>• {pt}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
         </div>
     );
 }
