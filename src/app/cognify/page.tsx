@@ -28,10 +28,13 @@ async function getFeatures(): Promise<Features> {
 export default function CognifyPage() {
   const [features, setFeatures] = useState<Features | null>(null);
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
-  const [featureId, setFeatureId] = useState<string | null>(null);
+  const [featureId, setFeatureId] = useState<string>("cognitive");
 
   useEffect(() => {
-    getFeatures().then(setFeatures);
+    getFeatures().then((fetchedFeatures) => {
+      setFeatures(fetchedFeatures);
+      setSelectedFeature(fetchedFeatures.cognitive);
+    });
   }, []);
 
   const handleFeatureClick = (feature: Feature, id: string) => {
