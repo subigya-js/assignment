@@ -13,11 +13,11 @@
 
 1. Clone the repository:
    ```
-   git clone https://github.com/subigya-js/cognifynow.git
+   git clone https://github.com/subigya-js/assignment.git
    ```
    
    ```
-   cd cognifynow
+   cd assignment
    ```
 
 2. Install dependencies:
