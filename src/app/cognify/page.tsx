@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import FeatureIcon from '../../../components/FeatureIcon';
+import FeatureInfo from '../../../components/FeatureInfo';
 import Loading from './loading';
 
 interface Feature {
@@ -56,14 +57,7 @@ export default function CognifyPage() {
         <Image src="/assets/brain.svg" alt="Brain" width={500} height={500} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
         {selectedFeature && (
-          <div className={`absolute ${featureId == "cognitive" && "top-50 left-90"} ${featureId == "ai_problem_solving" && "bottom-10 left-90"} ${featureId == "dynamic_paths" && "top-50 right-30"} ${featureId == "ai_mentor" && "bottom-10 right-30"} transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-90 p-4 rounded-xl shadow-lg z-20 w-74`}>
-            <h3 className="font-bold text-lg mb-2">{selectedFeature.title}</h3>
-            <ul className="text-sm space-y-1">
-              {selectedFeature.points.map((pt, idx) => (
-                <li key={idx}>• {pt}</li>
-              ))}
-            </ul>
-          </div>
+          <FeatureInfo feature={selectedFeature} featureId={featureId} />
         )}
 
         <FeatureIcon
